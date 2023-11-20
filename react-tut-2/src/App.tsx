@@ -1,11 +1,11 @@
 import Welcome from "./components/Welcome";
-
+import GreetMessage from "./components/GreetMessage";
 function App() {
   return (
     <>
       <div className="container">
         <Welcome />
-        <h2>bye</h2>
+        <GreetMessage />
       </div>
     </>
   );
