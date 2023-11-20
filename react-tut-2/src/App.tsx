@@ -1,8 +1,10 @@
+import Welcome from "./components/Welcome";
+
 function App() {
   return (
     <>
       <div className="container">
-        <h1>hii</h1>
+        <Welcome />
         <h2>bye</h2>
       </div>
     </>
