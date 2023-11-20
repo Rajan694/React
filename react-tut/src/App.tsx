@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Message from "./components/Message";
+import ListGroup from "./components/ListGroup";
+import Button from "./components/Button";
+import Alert from "./components/Alert";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const items = ["Mumbai", "Pune", "Delhi", "Chennai", "Hyderabad"];
+  const [showComponent, setShowComponent] = useState(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="container">
+      <Message>
+        <h1>Hello Rajan</h1>
+      </Message>
+      <ListGroup
+        items={items}
+        heading="Cities"
+        onSelectItem={(item) => console.log(item)}
+      />
+
+      {showComponent && (
+        <Alert onClose={() => setShowComponent(false)}>
+          This is Rajan's alert'
+        </Alert>
+      )}
+      {/* <Alert>This is Rajan's alert'</Alert> */}
+      <Button color="info" onClick={() => setShowComponent(!showComponent)}>
+        Toggle Component
+      </Button>
+    </div>
+  );
 }
 
-export default App
+export default App;
