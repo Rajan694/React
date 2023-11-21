@@ -2,6 +2,7 @@ import { useState } from "react";
 import Welcome from "./components/Welcome";
 import GreetMessage from "./components/GreetMessage";
 import Button from "./components/Button";
+import Form from "./components/Form";
 function App() {
   const [name, setName] = useState("Rajan");
 
@@ -17,6 +18,8 @@ function App() {
           <GreetMessage name={name} />
         </div>
         <Button text="Click Me!" onClick={showAlert}></Button>
+        <hr />
+        <Form />
       </div>
     </>
   );
