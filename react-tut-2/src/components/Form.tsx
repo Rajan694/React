@@ -63,6 +63,7 @@ function Form() {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            className="form-control is-valid"
           />
         </label>
         <br />
@@ -72,6 +73,7 @@ function Form() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="form-control is-invalid"
           />
         </label>
         <br />
