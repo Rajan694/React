@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 function Form() {
   const [data, setData] = useState("");
   const [showData, setShowData] = useState(false);
@@ -21,6 +21,15 @@ function Form() {
       console.log("Login successful!");
     }
   }
+
+  //lifecycle hook, all in one, can be sued many times
+  useEffect(() => {
+    console.log("this is lifecycle hook");
+  }, [data]);
+
+  useEffect(() => {
+    console.log("this is lifecycle hook for username");
+  }, [username, password]);
 
   return (
     <>
