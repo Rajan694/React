@@ -2,25 +2,43 @@ import { useState } from "react";
 function Form() {
   const [data, setData] = useState("");
   const [showData, setShowData] = useState(false);
+  //FORM VARIABLES
 
-  function handleInput(e: object) {
-    console.log(typeof e);
-    setData(e.target.value);
-    setShowData(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  function handleSubmit(e: any) {
+    e.preventDefault();
+
+    if (username === "" || password === "") {
+      setError("Please fill in all fields");
+    } else if (password.length < 6) {
+      setError("Password should be at least 6 characters");
+    } else {
+      // Perform login logic here
+      setError("");
+      console.log("Login successful!");
+    }
   }
 
-  function handleSubmit() {
-    setShowData(true);
-  }
   return (
     <>
       <div>
         <h4>Input box current value: {data}</h4>
-        <div className="d-flex">
-          <input type="text" value={data} onChange={handleInput} />
+        <div className="d-flex mb-3">
+          <input
+            type="text"
+            value={data}
+            onChange={(e) => {
+              //USING TWO FUNCTION INLINE
+              setData(e.target.value);
+              setShowData(false);
+            }}
+          />
           <button
             className="btn btn-outline-info btn-sm ms-3"
-            onClick={handleSubmit}
+            onClick={() => setShowData(true)}
           >
             Submit
           </button>
@@ -28,6 +46,29 @@ function Form() {
 
         {showData && <h4>Input box value: {data}</h4>}
       </div>
+      {/* form started */}
+      <form onSubmit={handleSubmit}>
+        <label>
+          Username:
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        <br />
+        <button type="submit">Login</button>
+        {error && <div>{error}</div>}
+      </form>
     </>
   );
 }
