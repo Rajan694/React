@@ -4,6 +4,7 @@ import GreetMessage from "./components/GreetMessage";
 import Button from "./components/Button";
 import Form from "./components/Form";
 import Style from "./components/Style";
+import LoopComponent from "./components/LoopComponent";
 function App() {
   const [name, setName] = useState("Rajan");
 
@@ -23,6 +24,8 @@ function App() {
         <Form />
         <hr />
         <Style />
+        <hr />
+        <LoopComponent />
       </div>
     </>
   );
