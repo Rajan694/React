@@ -3,6 +3,7 @@ import Welcome from "./components/Welcome";
 import GreetMessage from "./components/GreetMessage";
 import Button from "./components/Button";
 import Form from "./components/Form";
+import Style from "./components/Style";
 function App() {
   const [name, setName] = useState("Rajan");
 
@@ -20,6 +21,8 @@ function App() {
         <Button text="Click Me!" onClick={showAlert}></Button>
         <hr />
         <Form />
+        <hr />
+        <Style />
       </div>
     </>
   );

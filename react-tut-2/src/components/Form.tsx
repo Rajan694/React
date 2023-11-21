@@ -8,7 +8,7 @@ function Form() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  function handleSubmit(e: any) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
     if (username === "" || password === "") {
