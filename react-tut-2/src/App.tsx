@@ -5,6 +5,8 @@ import Button from "./components/Button";
 import Form from "./components/Form";
 import Style from "./components/Style";
 import LoopComponent from "./components/LoopComponent";
+import Child from "./components/Child";
+
 function App() {
   const [name, setName] = useState("Rajan");
 
@@ -12,6 +14,11 @@ function App() {
     setName("Sandy");
     alert(`Alert from ${name}`);
   };
+
+  const getName = (name: string) => {
+    alert(name);
+  };
+
   return (
     <>
       <div className="container">
@@ -19,6 +26,8 @@ function App() {
           <Welcome />
           <GreetMessage name={name} />
         </div>
+        <Child getData={getName} />
+
         <Button text="Click Me!" onClick={showAlert}></Button>
         <hr />
         <Form />
