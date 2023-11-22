@@ -6,6 +6,7 @@ import Form from "./components/Form";
 import Style from "./components/Style";
 import LoopComponent from "./components/LoopComponent";
 import Child from "./components/Child";
+import UsingRefs from "./components/UsingRefs";
 
 function App() {
   const [name, setName] = useState("Rajan");
@@ -35,6 +36,8 @@ function App() {
         <Style />
         <hr />
         <LoopComponent />
+        <hr />
+        <UsingRefs />
       </div>
     </>
   );
