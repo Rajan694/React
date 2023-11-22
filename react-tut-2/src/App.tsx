@@ -7,6 +7,7 @@ import Style from "./components/Style";
 import LoopComponent from "./components/LoopComponent";
 import Child from "./components/Child";
 import UsingRefs from "./components/UsingRefs";
+import HigherOrderComp from "./components/HigherOrderComp";
 
 function App() {
   const [name, setName] = useState("Rajan");
@@ -38,6 +39,8 @@ function App() {
         <LoopComponent />
         <hr />
         <UsingRefs />
+        <hr />
+        <HigherOrderComp />
       </div>
     </>
   );
