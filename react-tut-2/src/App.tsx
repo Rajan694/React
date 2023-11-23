@@ -1,48 +1,30 @@
-import { useState } from "react";
-import Welcome from "./components/Welcome";
-import GreetMessage from "./components/GreetMessage";
-import Button from "./components/Button";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Greet from "./components/Greet";
 import Form from "./components/Form";
 import Style from "./components/Style";
 import LoopComponent from "./components/LoopComponent";
-import Child from "./components/Child";
 import UsingRefs from "./components/UsingRefs";
 import HigherOrderComp from "./components/HigherOrderComp";
+import Navbar from "./components/NavBar";
 
 function App() {
-  const [name, setName] = useState("Rajan");
-
-  const showAlert = () => {
-    setName("Sandy");
-    alert(`Alert from ${name}`);
-  };
-
-  const getName = (name: string) => {
-    alert(name);
-  };
-
   return (
-    <>
-      <div className="container">
-        <div className="d-flex">
-          <Welcome />
-          <GreetMessage name={name} />
-        </div>
-        <Child getData={getName} />
-
-        <Button text="Click Me!" onClick={showAlert}></Button>
-        <hr />
-        <Form />
-        <hr />
-        <Style />
-        <hr />
-        <LoopComponent />
-        <hr />
-        <UsingRefs />
-        <hr />
-        <HigherOrderComp />
+    <Router>
+      <Navbar />
+      <div className="container" style={{ marginTop: "70px" }}>
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/greet" Component={Greet} />
+          <Route path="/form" Component={Form} />
+          <Route path="/style" Component={Style} />
+          <Route path="/loop" Component={LoopComponent} />
+          <Route path="/refs" Component={UsingRefs} />
+          <Route path="/hoc" Component={HigherOrderComp} />
+          <Route path="/*" element={<h1>404 pAgE</h1>} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 

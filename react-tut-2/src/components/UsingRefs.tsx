@@ -17,17 +17,21 @@ function UsingRefs() {
   }
 
   return (
-    <div>
-      <h1>useRef in React </h1>
-      <input type="text" ref={inputRef} />
-      <button className="btn btn-primary btn-sm" onClick={controlInput}>
-        Handle Input
-      </button>
-      <ForwardRefs ref={myRef} />
-      <button className="btn btn-info btn-sm" onClick={controlInput2}>
-        Handle Input in its child by forwardRef
-      </button>
-    </div>
+    <>
+      <div>
+        <h1>useRef in React </h1>
+        <input type="text" ref={inputRef} />
+        <button className="ms-2 btn btn-primary btn-sm" onClick={controlInput}>
+          Handle Input
+        </button>
+      </div>
+      <div>
+        <ForwardRefs ref={myRef} />
+        <button className="ms-2 btn btn-info btn-sm" onClick={controlInput2}>
+          Handle Input in its child by forwardRef
+        </button>
+      </div>
+    </>
   );
 }
 

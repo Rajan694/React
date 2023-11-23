@@ -6,9 +6,9 @@ function LoopComponent() {
     <>
       <div>
         <ul className="list-group">
-          {name.map((n) => (
-            <li className="list-group-item">
-              <GreetMessage name={n} key={n} />
+          {name.map((n, index) => (
+            <li className="list-group-item" key={index}>
+              <GreetMessage name={n} />
             </li>
           ))}
         </ul>
