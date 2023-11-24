@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <>
       <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary navbar-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand active" aria-current="page" to="/">
-            <img src="../../public/vite.svg" />
-          </Link>
+          <NavLink className="navbar-brand active" to="/">
+            <img src="./vite.svg" />
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -21,35 +21,59 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/greet">
+                <NavLink
+                  className="nav-link"
+                  // activeClassName="active"
+                  to="/greet"
+                >
                   Greet
-                </Link>
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/form">
+                <NavLink
+                  className="nav-link"
+                  // activeClassName="active"
+                  to="/form"
+                >
                   Form
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/style">
+                <NavLink
+                  className="nav-link"
+                  // activeClassName="active"
+                  to="/style"
+                >
                   Style
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/loop">
+                <NavLink
+                  className="nav-link"
+                  // activeClassName="active"
+                  to="/loop"
+                >
                   Loop
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/refs">
+                <NavLink
+                  className="nav-link"
+                  // activeClassName="active"
+                  to="/refs"
+                >
                   Refs
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to="/hoc">
+                <NavLink
+                  className="nav-link"
+                  // activeClassName="active"
+                  to="/hoc"
+                >
                   HOC
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
